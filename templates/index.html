@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content_title %} Julipels Blog {% endblock %}
+<!-- n  = http://pastebin.com/5vwz6Wj4 -->
+{% block content %}
+<p>Welcome to my blog your name is {{name|default('unknown' , True)}}</p>
+{% if number %}
+<p>Your number is {{number|int}}</p>
+<ul>
+	{% for i in range(number|int) %}
+	{% if i  is divisibleby 2 %}
+	<li>{{i}}</li>
+	{% endif %}
+	{% endfor %}
+</ul>
+{% else %}
+<p>No number specified </p>
+{% endif %}
+{% endblock %}
